@@ -3,61 +3,68 @@ html(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Yahtzee
+    title Pure Template
     link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/pure-min.css')
     link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0-rc-1/grids-responsive-min.css')
-    link(rel='stylesheet', href='css/app.css')
+    link(rel='stylesheet', href='./css/app.css')
   body
-    h1 Yahtzee
+    .pure-g
+      .pure-u-1-4
+        h1 Yahtzee
+      .pure-u-3-4
+        #movement
+          img.arrow#up(src='./media/arrowup.png')
+          img.arrow#down(src='./media/arrowdown.png')
+          img.arrow#left(src='./media/arrowleft.png')
+          img.arrow#right(src='./media/arrowright.png')
 
     .pure-g
       .pure-u-1
         form.pure-form
           fieldset
-            h3 New Player
             input#username(type="text", placeholder="Username")
-            input#avatar(type="text", placeholder="Avatar URL")
+            | &nbsp;
+            input#avatar(type="text" placeholder="Avatar URL")
+            | &nbsp;
             button#add.pure-button.pure-button-primary Add Player
-
-    .pure-g
-      .pure-u-1
-        form.pure-form
-          fieldset
-            h3 Scoring
+            | &nbsp;
             input#score(type="text", placeholder="Score")
             | &nbsp;
-            button#add-score.pure-button.pure-button-primary Add Score
+            button#addscore.pure-button.pure-button-primary Add Score
+
+    .pure-g
+      .pure-u-1-2
+        #dice
+          img.dice(src='./media/1.png')
+          img.dice(src='./media/1.png')
+          img.dice(src='./media/1.png')
+          img.dice(src='./media/1.png')
+          img.dice(src='./media/1.png')
+      .pure-u-1-2
+        button.pure-button.button-success#roll Roll Dice
 
     .pure-g
       .pure-u-1
-        img.arrow#up(src='./media/arrowup.png')
-        img.arrow#down(src='./media/arrowdown.png')
-        img.arrow#left(src='./media/arrowleft.png')
-        img.arrow#right(src='./media/arrowright.png')
+        table#game.pure-table
+          thead
+            tr
+              th Avatar
+              th Name
+              th 1
+              th 2
+              th 3
+              th 4
+              th 5
+              th 6
+              th 7
+              th 8
+              th 9
+              th 10
+              th 11
+              th 12
+              th 13
+              th Total
+          tbody
 
-    .pure-g
-        .pure-u-1
-          table#game.pure-table
-            thead
-              tr
-                th Avatar
-                th Name
-                th 1
-                th 2
-                th 3
-                th 4
-                th 5
-                th 6
-                th 7
-                th 8
-                th 9
-                th 10
-                th 11
-                th 12
-                th 13
-                th Total
-            tbody
-
-
-    script(src='js/vendor/jquery-2.1.0.js')
-    script(src='js/source/main.js')
+    script(src='./js/vendor/jquery-2.1.0.js')
+    script(src='./js/source/main.js')
